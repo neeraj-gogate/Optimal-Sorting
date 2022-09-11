@@ -22,27 +22,22 @@ void sort(std::vector<std::vector<std::string> > letterSorter, std::vector<std::
     }
   }
 }
-void wordReader(std::vector<std::string> &og){
+void wordReader(std::vector<std::vector<std::string> > &letterSorter){
   for (std::string line; std::getline(std::cin, line);) {
-    og.push_back(line);
-  }
-}
-int main(){
-  std::vector<std::string> og;
-  wordReader(og);
-  std::vector<std::vector<std::string> > letterSorter;
-  std::vector<std::string> finalF;
-  
-  for (int i=0; i < og.size(); i++){
-    int ascii = (unsigned char)og[i][0];
+    int ascii = (unsigned char)line[0];
     if ((ascii >= 97) && (ascii <= 122)) {
       ascii -= 32;
     }
     if (letterSorter.size() <= ascii){
       letterSorter.resize(ascii + 1);
     }
-    letterSorter[ascii].push_back(std::string(og[i]));
+    letterSorter[ascii].push_back(line);
   }
+}
+int main(){
+  std::vector<std::vector<std::string> > letterSorter;
+  std::vector<std::string> finalF;
+  wordReader(letterSorter);
   sort(letterSorter, finalF, 1);
   for (int wordIndex = 0; wordIndex < finalF.size(); wordIndex++){
     std::cout << finalF[wordIndex] << std::endl;
