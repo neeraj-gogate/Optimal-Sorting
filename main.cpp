@@ -25,9 +25,11 @@ void sort(std::vector<std::vector<std::string> > letterSorter, std::vector<std::
 void wordReader(std::vector<std::vector<std::string> > &letterSorter){
   for (std::string line; std::getline(std::cin, line);) {
     int ascii = (unsigned char)line[0];
+    //makes all letters capital (essentially ignores case)
     if ((ascii >= 97) && (ascii <= 122)) {
       ascii -= 32;
     }
+    //adds vectors inside LS
     if (letterSorter.size() <= ascii){
       letterSorter.resize(ascii + 1);
     }
