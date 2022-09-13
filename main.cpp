@@ -9,7 +9,7 @@ void sort(std::vector<std::vector<std::string> > letterSorter, std::vector<std::
     else if (letterSorter[index].size() != 0) {
       std::vector<std::vector<std::string> > sorter;
       for (int i=0; i < letterSorter[index].size(); i++){
-        int ascii = letterSorter[index][i][n];
+        int ascii = (unsigned char)letterSorter[index][i][n];
         if ((ascii >= 97) && (ascii <= 122)) {
           ascii -= 32;
         }
