@@ -21,8 +21,8 @@ void sort(std::vector<std::vector<std::string> > letterSorter, std::vector<std::
         if ((ascii >= 97) && (ascii <= 122)) {
           ascii -= 32;
         }
-        if (letterSorter.size() <= ascii){
-          letterSorter.resize(ascii + 1);
+        if (sorter.size() <= ascii){
+          sorter.resize(ascii + 1);
         }
         sorter[ascii].push_back(std::string(letterSorter[index][i]));
       }
