@@ -1,8 +1,6 @@
 #!/usr/bin/python3.9
 import sys
-def reSizes(thing, size):
-  while len(thing) <= size+1:
-    letterSorter.append()
+
 def sort(letterSorter, n):
   for letter in letterSorter:
     
@@ -13,10 +11,7 @@ def sort(letterSorter, n):
       if len(letter[0]) > n:
         if len(letter[1]) > n:
           if ord(letter[0][n]) > ord(letter[0][n]):
-            temp = letter[1]
-            letter[1] = letter[0]
-            letter[0] = temp
-            finalF.append(letter)
+            letter[0], letter[1] = letter[1], letter[0]
           else:
             finalF.append(letter[1])
             finalF.append(letter[0])
