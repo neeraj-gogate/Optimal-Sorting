@@ -7,6 +7,14 @@ void sort(std::map<int, std::vector<std::string> > letterSorter, std::vector<std
     if (letterSorter[index].size() == 1){
       finalF.insert(std::end(finalF), std::begin(letterSorter[index]), std::end(letterSorter[index]));
     }
+    else if (letterSorter[index].size() == 2){    
+      if ((int) (unsigned char) letterSorter[index][0][n] > (int) (unsigned char) letterSorter[index][1][n]){
+        std::string temp = letterSorter[index][1];       
+        letterSorter[index][1] = letterSorter[index][0];
+        letterSorter[index][0] = temp;  
+      }
+      finalF.insert(std::end(finalF), std::begin(letterSorter[index]), std::end(letterSorter[index]));
+    }
     else if (letterSorter[index].size() != 0) {
       std::map<int, std::vector<std::string> > sorter;
       for (int i=0; i < letterSorter[index].size(); i++){
