@@ -8,7 +8,21 @@ def sort(letterSorter, n):
     
     if len(letter) == 1:
       finalF.append(letter[0])
-        
+
+    elif len(letter) == 2:
+      if len(letter[0]) > n:
+        if len(letter[1]) > n:
+          if ord(letter[0][n]) > ord(letter[0][n]):
+            temp = letter[1]
+            letter[1] = letter[0]
+            letter[0] = temp
+            finalF.append(letter)
+          else:
+            finalF.append(letter[1])
+            finalF.append(letter[0])
+        else:
+          finalF.append(letter)
+                                
     elif len(letter) != 0:
       w, h = 1, 1
       sorter = [[None for x in range(w)] for y in range(h)]
